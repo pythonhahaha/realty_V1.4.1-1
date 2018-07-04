@@ -19,7 +19,14 @@ urlpatterns = [
     url(r'^customer_distribute.html', views.customer_distribute),
     # 客户关怀信息目录
     url(r'^customer_care_list.html', views.customer_care_list),
+    # 修改客户关怀信息
     url(r'^customer_care_edit.html', views.customer_care_edit),
+    # 删除客户关怀信息
+    url(r'^del_customer_care',views.del_customer_care),
+    # 添加客户关怀信息
+    url(r'^customer_care_add.html', views.customer_care_add),
+    # 客户关怀搜索
+    url(r'^customercare_search',views.customercare_search),
 
     # 客户类型信息目录
     url(r'^customer_type_list.html', views.customer_type_list),

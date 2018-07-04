@@ -87,7 +87,10 @@ for(i=0;i<cs.length;i++){
 </script>
 <script type="text/javascript">
 	function add(){
-			window.location="http://localhost:8080/crm/view/customer/customer_care_add.html";
+			window.location="http://127.0.0.1:8000/client/customer_care_add.html";
+		}
+    function add1(){
+			window.location="http://127.0.0.1:8000/client/customercare_search";
 		}
 
 </script>
@@ -96,7 +99,7 @@ for(i=0;i<cs.length;i++){
   <body>
 
 
-  <form  action="http://localhost:8080/main/CustomerCareQueryServlet" method="post">
+  <form  action="http://127.0.0.1:8000/client/customer_care_add.html" method="post">
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td height="30" background="/static/tab_05.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -111,7 +114,7 @@ for(i=0;i<cs.length;i++){
      				 	<option value="3" >关怀方式</option>
    				 </select>
    				</td>
-            <td class="STYLE4">&nbsp;&nbsp;<input  type="button" value="查询" style="width:50px"/></td>
+            <td class="STYLE4">&nbsp;&nbsp;<input  type="button" onclick="add1()" value="查询" style="width:50px"/></td>
           <td class="STYLE4">&nbsp;&nbsp;<input  type="button"  onclick="add()" value="添加"  style="width:50px"/></td>
           </tr>
         </table></td>
@@ -146,18 +149,18 @@ for(i=0;i<cs.length;i++){
 {% for cust_care in cust_care_list %}
  <tr>
             <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE1">
-              <div align="center">1</div>
+              <div align="center">{{ cust_care.care_id }}</div>
             </div></td>
             <td height="20" bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">{{ cust_care.care_people }}</span></div></td>
+{#            <td height="20" bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">{{ cust_care.customer_id }}</span></div></td>#}
             <td height="20" bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">{{ cust_care.care_remark }}</span></div></td>
-   	    <td height="20" bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">{{ cust_care.care_way }}</span></div></td>
+   	        <td height="20" bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">{{ cust_care.care_way }}</span></div></td>
             <td height="20" bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">{{ cust_care.care_time|date:'Y-m-d H:i:s'}}</span></div></td>
             <td height="20" bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">{{ cust_care.care_nexttime |date:'Y-m-d H:i:s'}}</span></div></td>
-		<td height="20" bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">{{ cust_care.care_theme }} </span></div></td>
-		 <td height="20" bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">孙悟空</span></div></td>
+		    <td height="20" bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">{{ cust_care.care_theme }} </span></div></td>
+		    <td height="20" bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">{{ cust_care.care_people }}</span></div></td>
 
-
-             <td       height="20" bgcolor="#FFFFFF"><div align="center"><span class="STYLE4"><img src="/static/edt.gif" width="16" height="16" /><a href="/main/customer_care_edit.html">编辑</a>&nbsp; &nbsp;<img src="/static/del.gif" width="16" height="16" /><a href="javascript:void(0)">删除</a></span></div></td>
+             <td       height="20" bgcolor="#FFFFFF"><div align="center"><span class="STYLE4"><img src="/static/edt.gif" width="16" height="16" /><a href="/client/customer_care_edit.html/?care_edit={{ cust_care.care_id }}">编辑</a>&nbsp; &nbsp;<img src="/static/del.gif" width="16" height="16" /><a href="/client/del_customer_care/?care_id={{ cust_care.care_id }}"  >删除</a></span></div></td>
           </tr>
 {% endfor %}
 
@@ -173,7 +176,9 @@ for(i=0;i<cs.length;i++){
       <tr>
         <td width="12" height="35"><img src="/static/tab_18.gif" width="12" height="35" /></td>
         <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
           <tr>
+
             <td class="STYLE4">&nbsp;&nbsp;共有 2 条记录，当前第 1/1 页</td>
             <td><table border="0" align="right" cellpadding="0" cellspacing="0">
                 <tr>
