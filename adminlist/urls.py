@@ -11,7 +11,7 @@ urlpatterns = [
     # 添加部门
     url(r'dept_add.html/', views.dept_add),
     # 添加角色
-    # url(r'role_add.html/', views.role_add),
+    url(r'^role_add.html', views.role_add),
 
 
 ]

@@ -90,6 +90,7 @@ for(i=0;i<cs.length;i++){
 			window.location="http://127.0.0.1:8000/client/customer_care_add.html";
 		}
     function add1(){
+
 			window.location="http://127.0.0.1:8000/client/customercare_search";
 		}
 
@@ -99,7 +100,7 @@ for(i=0;i<cs.length;i++){
   <body>
 
 
-  <form  action="http://127.0.0.1:8000/client/customer_care_add.html" method="post">
+  <form  action="/client/customer_care_add.html" method="post">
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td height="30" background="/static/tab_05.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -108,7 +109,7 @@ for(i=0;i<cs.length;i++){
                 <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td class="STYLE4" align="center">&nbsp;&nbsp;请输入查询内容：<input type="text" name="customerInput" style="width: 290px"/></td>
-            <td class="STYLE4">&nbsp;&nbsp;请选择查询方式：<select name="queryType" style="width: 100px">
+            <td class="STYLE4">&nbsp;&nbsp;请选择查询方式：<select id="queryType" name="queryType" style="width: 100px">
       					<option value="1" >关怀客户</option>
      				 	<option value="2" >关怀主题</option>
      				 	<option value="3" >关怀方式</option>

@@ -26,7 +26,7 @@ urlpatterns = [
     # 添加客户关怀信息
     url(r'^customer_care_add.html', views.customer_care_add),
     # 客户关怀搜索
-    url(r'^customercare_search',views.customercare_search),
+    # url(r'^customercare_search',views.customercare_search),
 
     # 客户类型信息目录
     url(r'^customer_type_list.html', views.customer_type_list),

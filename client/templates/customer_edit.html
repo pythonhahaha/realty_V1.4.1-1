@@ -1,8 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <base href="http://127.0.0.1:8000/client/customer_care_edit.html">
+
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<base href="http://localhost:9090/crm/">
 
 		<title>修改客户信息</title>
 
@@ -23,7 +31,7 @@
 	<body>
 		<form action="http://localhost:9090/crm/servlet/CustomerUpdateServlet"
 			method="post" name="form2" onsubmit="return validator(this)" >
-
+			
 
 			<table class=editTable cellSpacing=1 cellPadding=0 width="100%"
 				align=center border=0>
@@ -37,20 +45,20 @@
 				<tr>
 					<td width="12%" bgcolor="#FFFDF0"><div align="center">负责员工：</div></td>
 		<td colspan="3" bgcolor="#FFFFFF"><select     name="customerForUser" style=" width: 145px">
-
-
+			
+					
 			<option    value="1"selected="selected" >张三</option>
-
+					
 			<option    value="6">蒋元征</option>
-
+					
 			<option    value="7">黄建新</option>
-
+					
 			<option    value="3">王五</option>
-
+					
 			<option    value="4">孙悟空</option>
-
+					
 			<option    value="5">猪八戒</option>
-
+			
 			</select>		</td>
 					<td width="12%" bgcolor="#FFFDF0">
 						<div align="center">
@@ -59,18 +67,18 @@
 					</td>
 					<td width="37%" colspan="3" bgcolor="#FFFFFF">
 						<select name="customerSource" style="width: 145px">
-
-
+							
+							
 							<option value="1"
-
+								
 								selected="selected" >自己上门</option>
-
+							
 							<option value="2"
 								>朋友推荐</option>
-
+							
 							<option value="3"
 								>百度网</option>
-
+							
 						</select>
 					</td>
 				</tr>
@@ -91,18 +99,18 @@
 					</td>
 					<td colspan="3" bgcolor="#FFFFFF">
 						<select name="customerCondition" style="width: 145px">
-
-
+							
+							
 							<option value="1"
-
+								
 								selected="selected" >潜在客户</option>
-
+							
 							<option value="2"
 								>意向客户</option>
-
+							
 							<option value="3"
 								>交易客户</option>
-
+							
 						</select>
 					</td>
 				</tr>
@@ -114,7 +122,7 @@
 					</td>
 					<td colspan="3" bgcolor="#FFFFFF">
 						<input type="radio" name="customerSex" value="男"
-
+							
 							checked="checked"  />
 						男&nbsp;&nbsp;&nbsp;&nbsp;
 						<input type="radio" name="customerSex" value="女"
@@ -129,21 +137,21 @@
 					</td>
 					<td colspan="3" bgcolor="#FFFFFF">
 						<select name="customerType" style="width: 145px">
-
-
+							
+							
 							<option value="1"
-
+								
 								selected="selected" >客户</option>
-
+							
 							<option value="2"
 								>合作伙伴</option>
-
+							
 							<option value="3"
 								>供应商</option>
-
+							
 							<option value="4"
 								>合作伙伴</option>
-
+							
 						</select>
 					</td>
 				</tr>
@@ -156,7 +164,7 @@
 					</td>
 					<td colspan="3" bgcolor="#FFFFFF">
 						<input type="text"style=" width: 145px"  disabled="disabled" name="customerBirthday"
-{#							value="2013-05-21 15:40:54.0"#}
+							value="2013-05-21 15:40:54.0"
 							readonly="readonly" id="customerBirthday"
 							onclick="WdatePicker({el:customerBirthday,dateFmt:'yyyy-MM-dd HH:mm:ss '})">
 						&nbsp;
@@ -300,7 +308,7 @@
 						<textarea rows="10" name="customerRemark"
 							style="width: 100%; resize: none;">
 						如同仁堂
-
+		
 		</textarea>
 					</td>
 				</tr>
@@ -309,10 +317,7 @@
 				align=center border=0>
 				<tr bgcolor="#ECF3FD">
 					<td width="36%"></td>
-
-                        <td width="17%"><input type="submit" name="submit"  value="提交"></td>
-
-
+					<td width="17%"><input type="submit" name="submit"  value="提交"></td>
 					<td width="4%"><input type="button" name="button"  onClick="history.back() "  value="返回"></td>
 					<td width="43%"></td>
 				</tr>
@@ -320,3 +325,4 @@
 		</form>
 	</body>
 </html>
+<SCRIPT Language=VBScript></SCRIPT>

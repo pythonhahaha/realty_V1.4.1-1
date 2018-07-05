@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db.transaction import commit
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
@@ -78,10 +78,17 @@ def dept_add(request):
             return HttpResponse('添加失败')
 
 #
-# def role_add(request):
-#     if request.method == 'GET':
-#         return render(request,'role_add.html')
-#     else:
-#         role = request.POST.get('rolePower',None)
-#         try:
-#             role_name = UserRole.objects.get(role_name=role)
+def role_add(request):
+    if request.method == 'GET':
+
+        return render(request,'role_add.html')
+    else:
+        role = request.POST.get('roleName',None)
+        role_pow = request.POST.get('rolePower',None)
+        try:
+            role_name = UserRole.objects.get(role_name=role)
+            role_power = UserRole.objects.get(role_power=role_pow)
+        except UserRole.DoesNotExist:
+            role_name = UserRole.objects.create(role_name=role)
+            role_power = UserRole.objects.create(role_power=role_pow)
+        return HttpResponseRedirect('/adminlist/role_add.html')

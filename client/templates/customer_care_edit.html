@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-  <base href="http://localhost:8080/crm/">
+  <base href="/client/customer_care_edit.html">
 
 		<title>关怀修改</title>
 
@@ -17,7 +17,7 @@
 		<script type="text/javascript"
 			src="/static/CheckForm.js"></script>
 		<script type="text/javascript"
-			src="http://localhost:8080/crm/resource/js/My97DatePicker/WdatePicker.js"></script>
+			src="/static/My97DatePicker/WdatePicker.js"></script>
 		<style type="text/css">
 .auto-style1 {
 	margin-left: 0px;
@@ -27,7 +27,7 @@
 	</head>
 
 	<body>
-		<form action="http://localhost:8080/crm/servlet/CustomerCareUpdateServlet"
+		<form action="/client/customer_care_edit.html"
 			method="post" name="form1" onsubmit="return checkForm('form1');">
 
 			<table class=editTable cellSpacing=1 cellPadding=0 width="100%"
@@ -58,6 +58,8 @@
 							关怀对象：
 						</div>
 					</td>
+
+
 					<td colspan="3" bgcolor="#FFFFFF">
 						<select name="customerId" style="width: 145px">
 
@@ -77,6 +79,7 @@
 						</select>
 						&nbsp;
 					</td>
+
 				</tr>
 				<tr>
 					<td bgcolor="#FFFDF0" style="width: 13%">
